@@ -4,7 +4,7 @@ Boilerplate para o trabalho final do processo trainee.
 
 ## Instruções
 
-Para realizar o trabalho, o gerente do grupo deve realizar um fork para um repositório pessoal, e seguir o desenvolvimento a partir do repositório criado.
+Para realizar o trabalho, o responsável do grupo deve realizar um fork para um repositório pessoal, e seguir o desenvolvimento a partir do repositório criado.
 
 ## Backlog do produto
 
