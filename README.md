@@ -13,43 +13,51 @@ Para realizar o trabalho, o responsável do grupo deve realizar um fork para um 
 2. No windows (ja tendo navegado até o diretorio do projeto):
    * Na primeira vez:
 
-    ```
+    ```bash
     cd front
     yarn install
     cd ..
     docker-compose up --build
     ```
 
-* Nas vezes subsequentes:
+   * Nas vezes subsequentes:
 
-  * Se não instalou novas dependencias:
+     * Se não instalou novas dependencias:
 
-    ` docker-compose up`
+        ```bash
+         docker-compose up
+         ```
 
-  * Se instalou novas dependencias:
+     * Se instalou novas dependencias:
 
-    `docker-compose up --build`
+        ```bash
+        docker-compose up --build
+        ```
 
 3. No linux (ja tendo navegado até o diretorio do projeto):
 
-* Na primeira vez:
+   * Na primeira vez:
 
-```bash
-cd front
-yarn install
-cd ..
-sudo docker-compose up --build
-```
+    ```bash
+    cd front
+    yarn install
+    cd ..
+    sudo docker-compose up --build
+    ```
 
-* Nas vezes subsequentes:
+   * Nas vezes subsequentes:
 
-  * Se não instalou novas dependencias:
+     * Se não instalou novas dependencias:
 
-    `sudo docker-compose up`
+        ```bash 
+        sudo docker-compose up
+        ```
 
-  * Se instalou novas dependencias:
+     * Se instalou novas dependencias:
 
-    `sudo docker-compose up --build`
+        ```bash
+        sudo docker-compose up --build
+        ```
 
 
 
