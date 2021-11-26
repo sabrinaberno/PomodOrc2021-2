@@ -43,6 +43,11 @@ build/Release
 
 # Dependency directories
 node_modules/
+front/yarn.lock
+server/yarn.lock
+server/package-lock.json
+front/package-lock.json
+package-lock.json
 jspm_packages/
 
 # TypeScript v1 declaration files
