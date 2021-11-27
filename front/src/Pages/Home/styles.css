@@ -1,2 +1,16 @@
+.homeConteiner {
+   display: flex;
+   width: 91.79%;
+   height: 100vh;
+   justify-content: center;
+   margin-left: 8.21%;
+   background-color: #F4F4F4; 
+}
 
-
+.homeMainText {
+    margin-top: 10%;
+    color: #383838;
+    font-size: 40px;
+    font-family: lato;
+    font-style: normal;
+}
