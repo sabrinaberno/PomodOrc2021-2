@@ -128,10 +128,9 @@ const Home = () => {
   
   return (
     <>
-    {/* <Sidebar /> */}
       <div className="container-global">
+      <Sidebar />
         <div className="container-btn">
-          {/* <Sidebar /> */}
           <div className="btn-sidebar">
             <MenuIcon className="menu-icon" />
           </div>
