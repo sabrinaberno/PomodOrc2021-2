@@ -5,6 +5,7 @@ import { ReactComponent as PlayIcon } from "../../Assets/Icons/play_arrow_black_
 import { ReactComponent as SkipIcon } from "../../Assets/Icons/skip_next_black_24dp.svg";
 import { ReactComponent as ResetIcon } from "../../Assets/Icons/refresh_black_24dp.svg";
 import { ReactComponent as PauseIcon } from "../../Assets/Icons/pause_black_24dp (1).svg";
+import { ReactComponent as CloseIcon } from "../../Assets/Icons/close_black_24dp.svg";
 
 import Sidebar from "../../Components/Sidebar";
 
@@ -16,7 +17,13 @@ const Home = () => {
   const [pause, setPause] = useState(false);
   const [reset, setReset] = useState(false);
   const [step, setStep] = useState(0);
-  const [skip, setSkip] = useState(false);
+  const [sidebar, setSidebar] = useState(false);
+  // const [skip, setSkip] = useState(false);
+
+  const showSidebar = () => {
+    setSidebar(!sidebar)
+    console.log(sidebar)
+  }
 
   const handleTime = () => {
     if (pause) {
@@ -122,20 +129,26 @@ const Home = () => {
     }
   }, [seconds]);
 
-  const title = "POMODO'ORC";
+  const title = "POMOD'ORC";
   const shortBreak = "Pausa curta";
   const longBreak = "Pausa longa";
   
   return (
     <>
       <div className="container-global">
-      <Sidebar />
+        <div className={sidebar ? 'sidebarOpen' : 'sidebarClosed' }>
+           <Sidebar />
+        </div>
         <div className="container-btn">
-          <div className="btn-sidebar">
-            <MenuIcon className="menu-icon" />
+          <div className="btn-sidebar" onClick={showSidebar}>
+            {
+              sidebar ? <CloseIcon className="close-icon" /> :
+              <MenuIcon className="menu-icon" />
+            }
+            <input type="checkbox" id="check"/>
           </div>
         </div>
-        <div className="container-texts">
+        <div className={sidebar ? 'container-texts-open' : 'container-texts-closed'}>
           <div className="pomodorc-text">
             {`${
               step % 2 === 0
@@ -153,7 +166,12 @@ const Home = () => {
             <div className="btn-play-pause"
               onClick={startTimer ? pauseTimer : handleTime}
             >
-              <PlayIcon className="play-icon" />
+              {
+                startTimer ? 
+                <PauseIcon className='pause-icon' /> :
+                <PlayIcon className="play-icon" />
+              }
+              
             </div>
             <div className="btn-skip">
               <SkipIcon className="skip-icon" onClick={skipTimer}/>

@@ -1,5 +1,4 @@
 import "./styles.css";
-import { ReactComponent as CloseIcon } from "../../Assets/Icons/close_black_24dp.svg";
 import { ReactComponent as ListIcon } from "../../Assets/Icons/sort_black_24dp.svg";
 import { ReactComponent as HelperIcon } from "../../Assets/Icons/help_outline_black_24dp.svg";
 
@@ -8,7 +7,7 @@ const Sidebar = () => {
     <div className="container-sidebar">
       <div className="container-sidebar-icons">
         <div className="sidebar-icons">
-          <ListIcon className="list-icon" />
+          <ListIcon className="list-icon" path="list-path"/>
           <p className="list-text">Listas</p>
         </div>
         <div className="sidebar-icons">

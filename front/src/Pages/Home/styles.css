@@ -7,17 +7,17 @@
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
   /* background-color: rgb(172, 135, 129); */
 }
 
 .container-btn {
   display: flex;
   position: absolute;
-  height: 94%;
-  left: 1.5%;
+  margin-top: 25px;
+  margin-left:25px;
   /* background-color: aqua; */
 }
 
@@ -41,26 +41,59 @@
 
 .menu-icon {
   padding: 25%;
-  fill: #b4fda8;
+  fill: rgba(0, 234, 255, 0.644);
 }
+
+.close-icon {
+  padding: 25%;
+  fill: rgba(0, 234, 255, 0.644);
+}
+
 
 .btn-sidebar p {
   color: white;
 }
 
-.container-texts {
+.container-texts-open {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 85%;
+  margin-left: 10.5%;
   height: 100vh;
+  color: #383838;
   /* background-color: red; */
   letter-spacing: 1px;
+  margin-right: 0px;
+  transition: margin-right 0.5s ease-in-out;
+}
+
+.container-texts-closed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  margin-left: 10.5%;
+  height: 100vh;
+  color: #383838;
+  /* background-color: red; */
+  letter-spacing: 1px;
+  margin-right: 230px;
+  transition: margin-right 0.5s ease-in-out;
+}
+
+#check{
+  display: none;
+}
+
+#check:checked ~ .container-texts{
+  margin-right: 100px;
 }
 
 .pomodorc-text {
-  font-size: 8rem;
+  font-size: 8vw;
   /* background-color: salmon; */
   margin-bottom: 5rem;
 }
@@ -131,7 +164,7 @@
 .reset-icon {
   padding: 25%;
   cursor: pointer;
-  fill: #b4fda8;
+  fill: rgba(0, 234, 255, 0.644);
 }
 
 .play-icon {
@@ -139,11 +172,19 @@
   align-self: center;
   padding-left: 12px;
   cursor: pointer;
-  fill: #b4fda8;
+  fill: rgba(0, 234, 255, 0.644);
+}
+
+.pause-icon {
+  display: flex;
+  align-self: center;
+  padding-left: 12px;
+  cursor: pointer;
+  fill: rgba(0, 234, 255, 0.644);
 }
 
 .skip-icon {
   padding: 25%;
   cursor: pointer;
-  fill: #b4fda8;
+  fill: rgba(0, 234, 255, 0.644);
 }
