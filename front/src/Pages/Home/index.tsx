@@ -4,14 +4,19 @@ import { ReactComponent as MenuIcon } from "../../Assets/Icons/menu_black_24dp.s
 import { ReactComponent as PlayIcon } from "../../Assets/Icons/play_arrow_black_24dp.svg";
 import { ReactComponent as SkipIcon } from "../../Assets/Icons/skip_next_black_24dp.svg";
 import { ReactComponent as ResetIcon } from "../../Assets/Icons/refresh_black_24dp.svg";
+import { ReactComponent as PauseIcon } from "../../Assets/Icons/pause_black_24dp (1).svg";
+
+import Sidebar from "../../Components/Sidebar";
 
 const Home = () => {
+  
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(4);
   const [startTimer, setStartTimer] = useState(false);
   const [pause, setPause] = useState(false);
   const [reset, setReset] = useState(false);
   const [step, setStep] = useState(0);
+  const [skip, setSkip] = useState(false);
 
   const handleTime = () => {
     if (pause) {
@@ -21,11 +26,12 @@ const Home = () => {
     setStartTimer(true);
     if (seconds === 0) {
       if (minutes === 0) {
-        if(step === 7){
+        pauseTimer();
+        if (step === 7) {
           setMinutes(0);
           setSeconds(4);
           setStep(0);
-        }else{
+        } else {
           if (step % 2 === 0) {
             if (step !== 6) {
               setMinutes(0);
@@ -34,15 +40,14 @@ const Home = () => {
             } else {
               setMinutes(0);
               setSeconds(15);
-              setStep(step+1);
+              setStep(step + 1);
             }
           } else {
             setMinutes(0);
             setSeconds(4);
-            setStep(step + 1); 
+            setStep(step + 1);
           }
-        } 
-        setPause(true);
+        }
         return;
       } else {
         setMinutes(minutes - 1);
@@ -63,12 +68,53 @@ const Home = () => {
   const resetTimer = () => {
     pauseTimer();
     setReset(true);
-    setTimeout(() => {
-      setMinutes(1);
-      setSeconds(10);
-      setReset(false);
-    }, 1000);
+    if (step === 7) {
+      setTimeout(() => {
+        setMinutes(0);
+        setSeconds(15);
+        setReset(false);
+      }, 1000);
+    } else {
+      if (step % 2 === 0) {
+        if (step !== 6) {
+          setTimeout(() => {
+            setMinutes(0);
+            setSeconds(4);
+            setReset(false);
+          }, 1000);
+        } else {
+          setTimeout(() => {
+            setMinutes(0);
+            setSeconds(4);
+            setReset(false);
+          }, 1000);
+        }
+      } else {
+        setTimeout(() => {
+          setMinutes(0);
+          setSeconds(2);
+          setReset(false);
+        }, 1000);
+      }
+    }
   };
+
+  const skipTimer = () => {
+    if(startTimer) {
+      setPause(true);
+      setTimeout(() => {
+        setMinutes(0);
+        setSeconds(0);
+      }, 1000);
+    }else{
+      setPause(false);
+      setStartTimer(true);
+      setTimeout(() => {
+        setMinutes(0);
+        setSeconds(0);
+      }, 1000);
+    }  
+  } 
 
   useEffect(() => {
     if (startTimer) {
@@ -79,9 +125,10 @@ const Home = () => {
   const title = "POMODO'ORC";
   const shortBreak = "Pausa curta";
   const longBreak = "Pausa longa";
-
+  
   return (
     <>
+    {/* <Sidebar /> */}
       <div className="container-global">
         <div className="container-btn">
           {/* <Sidebar /> */}
@@ -89,28 +136,29 @@ const Home = () => {
             <MenuIcon className="menu-icon" />
           </div>
         </div>
-        <div className="container-texts" >
+        <div className="container-texts">
           <div className="pomodorc-text">
-            
             {`${
-              step %2===0? `${title}`: `${step !== 7 ? `${shortBreak}` : longBreak}`}`}
+              step % 2 === 0
+                ? `${title}`
+                : `${step !== 7 ? `${shortBreak}` : `${longBreak}`}`
+            }`}
           </div>
           <div className="timer-text">{`${
             reset ? "00" : minutes < 10 ? `0${minutes}` : minutes
           } : ${reset ? "00" : seconds < 10 ? `0${seconds}` : seconds}`}</div>
           <div className="ctn-btn-icons">
-            <button className="btn-reset">
+            <div className="btn-reset">
               <ResetIcon className="reset-icon" onClick={resetTimer} />
-            </button>
-            <button
-              className="btn-play"
+            </div>
+            <div className="btn-play-pause"
               onClick={startTimer ? pauseTimer : handleTime}
             >
               <PlayIcon className="play-icon" />
-            </button>
-            <button className="btn-skip">
-              <SkipIcon className="skip-icon" />
-            </button>
+            </div>
+            <div className="btn-skip">
+              <SkipIcon className="skip-icon" onClick={skipTimer}/>
+            </div>
           </div>
         </div>
       </div>

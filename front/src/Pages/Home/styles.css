@@ -16,7 +16,7 @@
 .container-btn {
   display: flex;
   position: absolute;
-  height: 96.875%;
+  height: 94%;
   left: 1.5%;
 }
 
@@ -24,18 +24,23 @@
   display: flex;
   height: 3rem;
   width: 3rem;
-  /* margin-left: 1.5rem; */
+  cursor: pointer;
   border-radius: 50%;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
   background-color: #383838;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
 }
-.btn-sidebar:hover{
-  background-color: #333333;
+
+.btn-sidebar:hover {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
-.menu-icon{
+.menu-icon {
   padding: 25%;
-  fill: #B4FDA8;
+  fill: #b4fda8;
 }
 
 .btn-sidebar p {
@@ -62,49 +67,82 @@
 .timer-text {
   font-size: 10rem;
   /* background-color: #2e3a51; */
-  margin-bottom: 10rem;
-  
+  margin-bottom: 7rem;
 }
 
-.ctn-btn-icons{
+.ctn-btn-icons {
   display: flex;
-  gap: 105px;
+  width: 25rem;
+  flex-direction: row;
+  justify-content: space-around;
   /* background-color: tomato; */
 }
 
-.btn-reset{
+.btn-reset {
   height: 3rem;
   width: 3rem;
   border-radius: 50%;
   background-color: #383838;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
 }
 
-.btn-play{
+.btn-reset:hover {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.btn-play-pause {
+  display: flex;
   height: 3rem;
   width: 3rem;
   border-radius: 50%;
   background-color: #383838;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
 }
 
-.btn-skip{
+.btn-play-pause:hover {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.btn-skip {
   height: 3rem;
   width: 3rem;
   border-radius: 50%;
   background-color: #383838;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
 }
 
-.reset-icon{
-  fill: #B4FDA8;
+.btn-skip:hover {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
-.play-icon{
-  fill: #B4FDA8;
+.reset-icon {
+  padding: 25%;
+  cursor: pointer;
+  fill: #b4fda8;
 }
 
-.skip-icon{
-  fill: #B4FDA8;
+.play-icon {
+  display: flex;
+  align-self: center;
+  padding-left: 12px;
+  cursor: pointer;
+  fill: #b4fda8;
 }
 
+.skip-icon {
+  padding: 25%;
+  cursor: pointer;
+  fill: #b4fda8;
+}
