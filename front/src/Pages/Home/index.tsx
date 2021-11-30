@@ -1,12 +1,13 @@
-import React from 'react'
+import './styles.css'
 
 function index() {
+    
     return (
-        <div>
-            
+        <div className="home-container">
+
         </div>
     )
 }
 
-export default index
+export default index;
 
