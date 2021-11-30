@@ -1,0 +1,46 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.home-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.no-lists-container {
+    flex: 1;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F4F4F4;
+    overflow-y: auto;
+}
+
+.create-list-container {
+    overflow-y: auto;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-container .img {
+    height: 300px;
+    width: 300px;
+}
+
+.homeMainText {
+    margin-top: 10%;
+    color: #383838;
+    font-size: 40px;
+    font-family: lato;
+    font-style: normal;
+}
