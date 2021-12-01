@@ -15,8 +15,9 @@
     flex: 1;
     display: flex;
     height: 100%;
+    margin-right: 5%;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     overflow-y: auto;
 }
@@ -31,15 +32,15 @@
     align-items: center;
 }
 
-.img-container .img {
-    height: 300px;
-    width: 300px;
+.img {
+    height: 70vh;
+    width: 50vw;
 }
 
 .homeMainText {
     margin-top: 10%;
     color: #383838;
-    font-size: 40px;
+    font-size: 48px;
     font-family: lato;
     font-style: normal;
 }

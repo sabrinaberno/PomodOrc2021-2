@@ -12,7 +12,7 @@ const index = () => {
             <SidebarList />
             <section className="no-lists-container">
                 <div className="homeMainText">
-                    Não há listas criadas ainda... 
+                    Selecione uma lista ou crie uma nova
                 </div>
                     
                 <div className="img-container">

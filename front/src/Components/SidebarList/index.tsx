@@ -9,13 +9,11 @@ const SidebarList = () => {
         <Link className="back-button" to="/">
           <BackIcon className="back-icon" />
         </Link>
-
         <div className="container-addIcon">
           <div className="container-new-list">
             <AddIcon className="add-icon"/>
             <Link className="list-text" to="/list">Criar Lista</Link>
           </div>
-
         </div>
       <section className="sideBarItemContainer">
         <div className="sideBarItem">
