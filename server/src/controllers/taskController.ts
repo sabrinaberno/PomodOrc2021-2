@@ -32,7 +32,7 @@ export default class TaskController {
   //-----------------------Get specific task--------------------
   async getTask(req: Request, res: Response): Promise<Response>{
     try {
-      const tasks = await Task.find( {' _id': req.params._id });
+      const tasks = await Task.find( {'_id': req.params._id });
       return res.status(200).json(tasks);
     } catch (error) {
       return res.status(400).json(error.message);
@@ -44,10 +44,7 @@ export default class TaskController {
   //-----------------------Update tasks-----------------------------
   async updateTask(req: Request, res: Response): Promise<Response> {
     try {
-      const task = await Task.findOneAndUpdate(
-        {'_id': req.params._id },
-        req.body
-      );
+      const task = await Task.findOneAndUpdate( {'_id': req.params._id }, req.body);
       return res.status(201).json(task);
     } catch (error) {
       return res.status(400).json(error.message);
@@ -59,7 +56,7 @@ export default class TaskController {
   //-----------------------Delete tasks-----------------------------
   async deleteTask(req: Request, res: Response): Promise<Response> {
     try {
-      const task = await Task.findOneAndDelete({ _id: req.params._id });
+      const task = await Task.findOneAndDelete( {'_id': req.params._id });
       return res.status(200).json(task);
     } catch (error) {
       return res.status(400).json(error.message);

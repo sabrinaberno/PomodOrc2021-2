@@ -3,6 +3,18 @@ import List from "../models/listSchema";
 
 export default class ListController {
 
+    //-----------------------Create list----------------------------
+    async createList (req:Request, res:Response): Promise<Response>{
+        try {
+            const list = await List.create( req. body);
+            return res.status(201).json(list);
+        }   catch (error) {
+            return res.status(400).json(error.message);
+        }
+    }
+    //-----------------------End create list------------------------
+    
+
     //-----------------------Get all lists--------------------------
     async getAllList(req: Request, res:Response): Promise<Response>{
         try {
@@ -26,17 +38,6 @@ export default class ListController {
     }
     //-----------------------End get specific list---------------
 
-
-    //-----------------------Create list----------------------------
-    async createList (req:Request, res:Response): Promise<Response>{
-        try {
-            const list = await List.create( req. body);
-            return res.status(201).json(list);
-        } catch (error) {
-            return res.status(400).json(error.message);
-        }
-    }
-    //-----------------------End create list------------------------
 
     
     //-----------------------Update list-------------------------------
