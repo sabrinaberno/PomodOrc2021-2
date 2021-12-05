@@ -58,14 +58,6 @@ const SidebarList = ({ openList }: { openList: Function }) => {
         </div>
       </div>
 
-      {/* created lists container */}
-      {/* <SideBarItems />
-      <SideBarItems />
-      <SideBarItems />
-      <SideBarItems />
-      <SideBarItems />
-      <SideBarItems />
-      <SideBarItems /> */}
       {lists?.map((list) => {
         return <SideBarItems name={list.name} />;
       })}

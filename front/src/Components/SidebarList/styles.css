@@ -16,6 +16,7 @@
   align-items: center;
   flex: 8;
   color: #383838;
+
 }
 
 .back-button {
@@ -49,6 +50,7 @@
   height: 10%;
   cursor: pointer;
   border-top: 1px solid rgba(0, 0, 0, 0.11);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
   transition: all 0.3s;
 }
 
@@ -93,7 +95,7 @@
   flex-direction: column;
   color: #383838;
   /* background-color: pink; */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+  border-top: 1px solid rgba(0, 0, 0, 0.11);
 }
 
 

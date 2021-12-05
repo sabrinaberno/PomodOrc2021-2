@@ -11,8 +11,8 @@ import Sidebar from "../../Components/Sidebar";
 
 const Home = () => {
   
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(4);
+  const [minutes, setMinutes] = useState(25);
+  const [seconds, setSeconds] = useState(0);
   const [startTimer, setStartTimer] = useState(false);
   const [pause, setPause] = useState(false);
   const [reset, setReset] = useState(false);
@@ -35,23 +35,23 @@ const Home = () => {
       if (minutes === 0) {
         pauseTimer();
         if (step === 7) {
-          setMinutes(0);
-          setSeconds(4);
+          setMinutes(25);
+          setSeconds(0);
           setStep(0);
         } else {
           if (step % 2 === 0) {
             if (step !== 6) {
-              setMinutes(0);
-              setSeconds(2);
+              setMinutes(5);
+              setSeconds(0);
               setStep(step + 1);
             } else {
-              setMinutes(0);
-              setSeconds(15);
+              setMinutes(15);
+              setSeconds(0);
               setStep(step + 1);
             }
           } else {
-            setMinutes(0);
-            setSeconds(4);
+            setMinutes(25);
+            setSeconds(0);
             setStep(step + 1);
           }
         }
