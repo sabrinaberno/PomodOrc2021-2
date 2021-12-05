@@ -1,20 +1,24 @@
-import React from 'react';
+import {useState} from 'react';
 import { ReactComponent as Icon } from '../../Assets/Images/Add_files-bro.svg';
 import './styles.css';
 import SidebarList from '../../Components/SidebarList';
-
-
-const index = () => {
+import ListModal from '../../Components/Modal/ListModal/ListCreateModal';
+import TaskModal from '../../Components/Modal/TaskModal/TaskCreateModal/TaskCreateModal';
+const ListPage = () => {
     
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
     return (
         
         <div className="home-container">
-            <SidebarList />
+            <SidebarList openList ={setModalIsOpen} />
+            <ListModal modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />
             <section className="no-lists-container">
+            
                 <div className="homeMainText">
-                    Não há listas criadas ainda... 
+                    Selecione uma lista ou crie uma nova
                 </div>
-                    
+                
                 <div className="img-container">
                     <Icon className="img" />
               </div>
@@ -25,5 +29,5 @@ const index = () => {
 
 }
 
-export default index;
+export default ListPage;
 

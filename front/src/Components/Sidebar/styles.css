@@ -34,7 +34,7 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  
+  text-decoration: none;
   width: 99%;
   height: 10%;
   border-radius: 2px;
@@ -50,7 +50,7 @@
 }
 
 .sidebar-icons:hover {
-  background-color: rgba(0, 254, 106, 0.29);
+  background-color: rgba(51, 189, 182, 0.29);
   -moz-transform: scale(1.0);
   -webkit-transform: scale(1.0);
   transform: scale(1.0);
